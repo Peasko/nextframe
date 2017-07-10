@@ -1,0 +1,18 @@
+.include-custom-font(@family, @file, @weight, @style){
+  @font-face{
+    font-family: @family;
+    src: url('fonts/@{file}.eot'); /* IE9 Compat Modes */
+    src: url('fonts/@{file}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/@{file}.woff2') format('woff2'), /* Super Modern Browsers */
+    url('fonts/@{file}.woff') format('woff'), /* Pretty Modern Browsers */
+    url('fonts/@{file}.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('fonts/@{file}.svg#icon') format('svg'); /* Legacy iOS */
+    font-weight: @weight;
+    font-style: @style;
+    font-stretch: normal;
+  }
+}
+
+.include-custom-font('Roboto', 'Roboto-Regular', 'normal', 'normal');
+.include-custom-font('Roboto-Bold', 'Roboto-Bold', 'normal', 'normal');
+.include-custom-font('Roboto-Thin', 'Roboto-Thin', 'normal', 'normal');
