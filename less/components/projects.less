@@ -19,4 +19,47 @@
       line-height: 70px;
     }
   }
+
+  .preview {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      .hover-effect {
+        opacity: 1;
+      }
+    }
+
+    &.clicked {
+      .hover-effect {
+        span {
+          color: @color-green;
+          border-color: @color-green;
+        }
+      }
+    }
+
+    .hover-effect {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      -moz-transition: opacity 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      -o-transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease;
+
+      span {
+        padding: 20px;
+        border: 2px solid #fff;
+        font-size: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
 }

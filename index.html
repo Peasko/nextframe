@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nextframe</title>
+    <link rel="stylesheet" href="less/plyr.css">
     <link rel="stylesheet" href="main.css">
-    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/jquery-2.2.4.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
 </head>
 <body>
     <header>
@@ -64,6 +66,19 @@
                         </div>
                     </article>
                 </div>
+                <div class="col-md-4">
+                    <video class="bla" poster="videos/YIT.jpg" controls style="width: 100%">
+                        <source src="videos/YIT.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-md-4">
+                    <div class="preview">
+                        <div class="hover-effect">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                        </div>
+                        <img src="videos/YIT.jpg" alt="yit" class="img-responsive video-thumbnail" data-modal-img="YIT" data-modal-video="YIT">
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -78,6 +93,22 @@
         </div>
     </footer>
 
+    <!-- MODAL -->
+    <div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="modal-video-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/plyr.js"></script>
     <script src="scripts/header.js"></script>
+    <script src="scripts/videos.js"></script>
 </body>
 </html>
