@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nextframe</title>
     <link rel="stylesheet" href="main.css">
     <script src="scripts/jquery-3.2.1.min.js"></script>
@@ -31,6 +32,7 @@
     <main class="container">
         <div class="c-bio">
             <div class="image-wrapper">
+                <div class="image-border"></div>
                 <img src="images/artist.png" alt="Picture of Matus Uhercik">
             </div>
             <div class="about">
@@ -38,17 +40,43 @@
             </div>
         </div>
         <div class="row c-scroll-down">
-            <!--https://codepen.io/rightblog/pen/EagNMN-->
+            <div class="mouse-scroll-icon">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>
+                    <span class="mouse-scroll-arrows first"></span>
+                    <span class="mouse-scroll-arrows second"></span>
+                </div>
+            </div>
             SCROLL DOWN
         </div>
-        <div style="visibility: hidden">
-            <br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd
-            <br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd
-            <br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd
-            <br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd
-            <br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd<br>asd
-        </div>
+        <section class="c-projects">
+            <div class="header">
+                <div class="top">projects</div>
+                <div class="bottom">some stuff I did</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 column-list">
+                    <article class="project" style="margin-bottom: 20px;">
+                        <div class="video" style="background-color: #00b3ee;">
+                            asd <br> asd <br> asd <br> asd <br> asd <br> asd <br>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer>
+        <div class="header">
+            <div class="top">contact</div>
+            <div class="bottom">let's do some frames</div>
+        </div>
+        <div class="contact">
+            <div class="mail">uhercik@nextframe.com</div>
+            <div class="tel">+421 905 491 588</div>
+        </div>
+    </footer>
 
     <script src="scripts/header.js"></script>
 </body>
