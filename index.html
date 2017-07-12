@@ -9,18 +9,18 @@
     <script src="scripts/jquery-2.2.4.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
 </head>
-<body>
+<body data-spy="scroll" data-target="#menu-items">
     <header>
-        <div class="logo">
+        <div id="logo">
             next<strong>frame</strong>
         </div>
         <nav>
             <div class="nav-wrapper">
-                <div class="menu-items">
-                    <ul>
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">PROJECTS</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                <div id="menu-items" class="menu-items">
+                    <ul class="nav">
+                        <li><a href="#bio">HOME</a></li>
+                        <li><a href="#projects">PROJECTS</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </div>
                 <div class="hamburger-menu">
@@ -32,7 +32,7 @@
         </nav>
     </header>
     <main class="container">
-        <div class="c-bio">
+        <div id="bio" class="c-bio">
             <div class="image-wrapper">
                 <div class="image-border"></div>
                 <img src="images/artist.png" alt="Picture of Matus Uhercik">
@@ -53,23 +53,43 @@
             </div>
             SCROLL DOWN
         </div>
-        <section class="c-projects">
+        <section class="c-projects" id="projects">
             <div class="header">
                 <div class="top">projects</div>
                 <div class="bottom">some stuff I did</div>
             </div>
             <div class="row">
-                <div class="col-md-4 column-list">
-                    <article class="project" style="margin-bottom: 20px;">
-                        <div class="video" style="background-color: #00b3ee;">
-                            asd <br> asd <br> asd <br> asd <br> asd <br> asd <br>
+                <div class="col-md-4">
+                    <div class="preview">
+                        <div class="hover-effect">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
                         </div>
-                    </article>
+                        <img src="videos/sousede_cz.jpg" alt="yit" class="img-responsive video-thumbnail" data-modal-img="sousede_cz" data-modal-video="sousede_cz">
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <video class="bla" poster="videos/YIT.jpg" controls style="width: 100%">
-                        <source src="videos/YIT.mp4" type="video/mp4">
-                    </video>
+                    <div class="preview">
+                        <div class="hover-effect">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                        </div>
+                        <img src="videos/aurum.jpg" alt="yit" class="img-responsive video-thumbnail" data-modal-img="aurum" data-modal-video="aurum">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="preview">
+                        <div class="hover-effect">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                        </div>
+                        <img src="videos/bistro.jpg" alt="yit" class="img-responsive video-thumbnail" data-modal-img="bistro" data-modal-video="bistro">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="preview">
+                        <div class="hover-effect">
+                            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                        </div>
+                        <img src="videos/firo-exotika_na_lyziach.jpg" alt="yit" class="img-responsive video-thumbnail" data-modal-img="firo-exotika_na_lyziach" data-modal-video="firo-exotika_na_lyziach">
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="preview">
@@ -82,14 +102,22 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="container">
         <div class="header">
             <div class="top">contact</div>
             <div class="bottom">let's do some frames</div>
         </div>
-        <div class="contact">
+        <div id="contact">
             <div class="mail">uhercik@nextframe.com</div>
             <div class="tel">+421 905 491 588</div>
+        </div>
+        <div class="text-center">
+            <div class="return-btn">
+                <a href="#bio" class="arrows-wrapper">
+                    <span class="arrows first"></span>
+                    <span class="arrows second"></span>
+                </a>
+            </div>
         </div>
     </footer>
 

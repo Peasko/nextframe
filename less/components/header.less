@@ -17,9 +17,9 @@ header {
     background-color: rgba(0, 0, 0, 0.3);
   }
 
-  .logo {
+  #logo {
     font-family: 'Roboto-Thin';
-    font-size: 19px;
+    font-size: 20px;
     display: table-cell;
     vertical-align: middle;
     width: 20%;
@@ -27,7 +27,7 @@ header {
 
     strong {
       font-style: 'Roboto';
-      font-size: 19px;
+      font-size: 20px;
     }
   }
 
@@ -45,7 +45,7 @@ header {
         display: table-cell;
         vertical-align: middle;
 
-        ul {
+        .nav {
           list-style: none;
           margin: 0;
           padding: 0;
@@ -58,9 +58,17 @@ header {
             visibility: hidden;
             font-size: 12px;
 
+            &.active {
+              a {
+                color: @color-green;
+              }
+            }
+
             a {
               color: #fff;
               transition: color 0.5s;
+              background-color: transparent;
+              padding: 0;
 
               &:hover {
                 color: @color-green;

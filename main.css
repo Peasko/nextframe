@@ -6795,11 +6795,18 @@ body {
   font-family: 'Roboto', 'sans-serif', 'Arial';
   background-color: #222;
   color: #fff;
-  padding-top: 240px;
+  background-repeat: no-repeat;
+  background-image: url('images/bg01.jpg');
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(60%, #000000)), url('images/bg01.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
 }
 .c-bio {
   display: table;
   margin-bottom: 320px;
+  padding-top: 240px;
 }
 .c-bio .image-wrapper {
   display: table-cell;
@@ -6825,11 +6832,15 @@ body {
   padding-left: 30px;
   font-size: 15px;
   letter-spacing: 2px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 19px;
 }
 .c-bio .about strong {
   font-size: 26px;
   margin-right: 5px;
   font-weight: normal;
+  font-style: normal;
 }
 @media (max-width: 767px) {
   .c-bio {
@@ -6863,17 +6874,17 @@ header {
 header.open {
   background-color: rgba(0, 0, 0, 0.3);
 }
-header .logo {
+header #logo {
   font-family: 'Roboto-Thin';
-  font-size: 19px;
+  font-size: 20px;
   display: table-cell;
   vertical-align: middle;
   width: 20%;
   letter-spacing: 7px;
 }
-header .logo strong {
+header #logo strong {
   font-style: 'Roboto';
-  font-size: 19px;
+  font-size: 20px;
 }
 header nav {
   display: table-cell;
@@ -6889,12 +6900,12 @@ header nav .nav-wrapper .menu-items {
   display: table-cell;
   vertical-align: middle;
 }
-header nav .nav-wrapper .menu-items ul {
+header nav .nav-wrapper .menu-items .nav {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-header nav .nav-wrapper .menu-items ul li {
+header nav .nav-wrapper .menu-items .nav li {
   display: inline-block;
   transition: opacity 0.5s, visibility 0.5s;
   margin: 0 25px;
@@ -6902,11 +6913,16 @@ header nav .nav-wrapper .menu-items ul li {
   visibility: hidden;
   font-size: 12px;
 }
-header nav .nav-wrapper .menu-items ul li a {
+header nav .nav-wrapper .menu-items .nav li.active a {
+  color: #0affc2;
+}
+header nav .nav-wrapper .menu-items .nav li a {
   color: #fff;
   transition: color 0.5s;
+  background-color: transparent;
+  padding: 0;
 }
-header nav .nav-wrapper .menu-items ul li a:hover {
+header nav .nav-wrapper .menu-items .nav li a:hover {
   color: #0affc2;
   text-decoration: none;
 }
@@ -7143,6 +7159,7 @@ header nav .nav-wrapper .hamburger-menu:hover span {
 }
 .c-projects .header {
   text-align: center;
+  margin-bottom: 100px;
 }
 .c-projects .header .top {
   font-family: "Times New Roman", Times, serif;
@@ -7204,15 +7221,83 @@ footer .header .bottom {
   font-size: 65px;
   line-height: 70px;
 }
-footer .contact {
+footer #contact {
   text-align: center;
+  margin-bottom: 200px;
 }
-footer .contact .mail,
-footer .contact .tel {
+footer #contact .mail,
+footer #contact .tel {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 31px;
 }
-footer .contact .mail {
+footer #contact .mail {
   margin-bottom: 40px;
+}
+footer .return-btn {
+  margin-bottom: 150px;
+}
+footer .return-btn .arrows-wrapper {
+  display: inline-block;
+  border: 2px solid #fff;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-color: #fff;
+  transition: border-color 0.5s;
+}
+footer .return-btn .arrows-wrapper:hover {
+  border-color: #0affc2;
+}
+footer .return-btn .arrows-wrapper:hover .arrows {
+  border-color: #0affc2;
+}
+footer .return-btn .arrows-wrapper .arrows {
+  display: block;
+  -ms-transform: rotate(-135deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-135deg);
+  /* Chrome, Safari, Opera */
+  -moz-transform: rotate(-135deg);
+  /* Chrome, Safari, Opera */
+  -o-transform: rotate(-135deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-135deg);
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin: 0 0 4px 6px;
+  width: 11px;
+  height: 11px;
+  top: 15px;
+  left: 11px;
+  position: relative;
+  transition: border-color 0.5s;
+}
+footer .return-btn .arrows-wrapper .arrows.first,
+footer .return-btn .arrows-wrapper .arrows.second {
+  -webkit-animation: mouse-scroll 1s infinite;
+  -moz-animation: mouse-scroll 1s infinite;
+  -o-animation: mouse-scroll 1s infinite;
+  animation: mouse-scroll 1s infinite;
+}
+footer .return-btn .arrows-wrapper .arrows.first {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -o-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+  -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  animation-direction: alternate;
+}
+footer .return-btn .arrows-wrapper .arrows.second {
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  animation-direction: alternate;
+  margin-top: -6px;
 }
