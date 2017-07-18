@@ -6793,15 +6793,44 @@ button.close {
 }
 body {
   font-family: 'Roboto', 'sans-serif', 'Arial';
-  background-color: #222;
+  background-color: #000;
   color: #fff;
   background-repeat: no-repeat;
-  background-image: url('images/bg01.jpg');
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(60%, #000000)), url('images/bg01.jpg');
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 60%), url('images/bg01.jpg');
+}
+.background-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.background-holder .relative {
+  position: relative;
+}
+.background-holder .relative img {
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+.background-holder .relative img.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.background-holder .relative img.show {
+  opacity: 1;
+}
+.background-holder .relative .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  -webkit-box-shadow: inset 0px -550px 300px -150px #000000;
+  -moz-box-shadow: inset 0px -550px 300px -150px #000000;
+  box-shadow: inset 0px -550px 300px -150px #000000;
 }
 .c-bio {
   display: table;
@@ -7176,6 +7205,7 @@ header nav .nav-wrapper .hamburger-menu:hover span {
 .c-projects .preview {
   position: relative;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 .c-projects .preview:hover .hover-effect {
   opacity: 1;

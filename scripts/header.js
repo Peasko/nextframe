@@ -3,10 +3,22 @@ $(document).ready(function(){
     var $hamburgerMenu = $header.find('.hamburger-menu');
     var $menuItems = $header.find('.menu-items');
     var $body = $('body');
+    var $backgroundImages = $body.find('.bg-img');
 
     $body.scrollspy({ target: '#menu-items' });
 
     //https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp
+    $('header .menu-items a, footer .arrows-wrapper').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
 
     $hamburgerMenu.click(function(){
         $(this).toggleClass('open');
@@ -14,23 +26,22 @@ $(document).ready(function(){
         $menuItems.toggleClass('open');
     });
 
-    var iteration = 1;
+    var iteration = 0;
     function swapBg() {
-        if (iteration === 4) {
-            iteration = 1;
+        var tempIter = iteration;
+        if (iteration === 3) {
+            $backgroundImages.eq(iteration).removeClass('show');
+            iteration = 0;
         } else {
             iteration++;
+            $backgroundImages.eq(iteration).addClass('show');
+            if (tempIter !== 0) {
+                setTimeout(function(){
+                    $backgroundImages.eq(tempIter).removeClass('show');
+                }, 1000);
+            }
         }
-        // $body.addClass('bg-' + iteration);
 
-        $body.css({
-            "background-image": "url('images/bg0" + iteration + ".jpg')",
-            "background-image": "-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%), url('images/bg0" + iteration + ".jpg')",
-            "background-image": "-o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%), url('images/bg0" + iteration + ".jpg')",
-            "background-image": "-webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 60%), url('images/bg0" + iteration + ".jpg')",
-            "background-image": "-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 1))), url('images/bg0" + iteration + ".jpg')",
-            "background-image": "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 60%), url('images/bg0" + iteration + ".jpg')",
-        });
         setTimeout(swapBg, 7000);
     }
    setTimeout(swapBg, 7000);

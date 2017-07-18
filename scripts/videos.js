@@ -32,7 +32,4 @@ $(document).ready(function() {
         var player = plyr.setup($modal.find('video')[0]);
         player[0].stop();
     })
-
-    //http://azmind.com/bootstrap-tutorial-modal-video/
-    //https://github.com/sampotts/plyr
 });
