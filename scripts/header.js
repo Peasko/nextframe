@@ -29,7 +29,7 @@ $(document).ready(function(){
     var iteration = 0;
     function swapBg() {
         var tempIter = iteration;
-        if (iteration === 3) {
+        if (iteration === ($backgroundImages.length - 1)) {
             $backgroundImages.eq(iteration).removeClass('show');
             iteration = 0;
         } else {
